@@ -1,0 +1,21 @@
+ 
+ 
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+ <h1>Nick's Profile</h1>
+
+<br/>
+<a href="{% url 'blog:all_blogs' %}">All Blogs</a>
+{% for proj in profile %}
+<h2>{{proj.title}}</h2>
+<h3>{{proj.description}}</h3>
+<img src={{proj.image.url}} width="10%" /><br/>
+{% if proj.url %}
+<a href={{proj.url}}>Link</a>
+{% endif %}
+
+{% endfor %}
+ 
+{% endblock %}

@@ -1,0 +1,14 @@
+
+ 
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<h1>All blogs</h1>
+<h5>Nick has written total {{blog.count}} blog{{ blog.count|pluralize }}</h5>
+
+{% for bg in blog%}
+<a href=""><h2>{{bg.title}}</h2></a>
+<h3>{{bg.description}}</h3>
+{% endfor %}
+
+{% endblock %}
